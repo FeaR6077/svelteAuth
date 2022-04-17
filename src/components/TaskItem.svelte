@@ -5,7 +5,7 @@
 
   let isChecked: boolean;
 
-  function taskDone() {
+  const taskDone = () => {
     console.log(isChecked);
 
     let updatedTasks: string[] = $tasks.map((currentTask) => {
@@ -18,7 +18,7 @@
 
     tasks.set(updatedTasks);
     console.log($tasks);
-  }
+  };
 </script>
 
 <main>

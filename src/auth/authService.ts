@@ -2,16 +2,16 @@ import createAuth0Client from "@auth0/auth0-spa-js";
 import { user, isAuthenticated, popupOpen } from "../stores/auth";
 import config from "../../auth_config";
 
-async function createClient() {
+const createClient = async () => {
   let auth0Client = await createAuth0Client({
     domain: config.domain,
     client_id: config.clientId,
   });
 
   return auth0Client;
-}
+};
 
-async function loginWithPopup(client, options) {
+const loginWithPopup = async (client, options) => {
   popupOpen.set(true);
   try {
     await client.loginWithPopup(options);
@@ -23,11 +23,11 @@ async function loginWithPopup(client, options) {
   } finally {
     popupOpen.set(false);
   }
-}
+};
 
-function logout(client) {
+const logout = (client) => {
   return client.logout();
-}
+};
 
 const auth: any = {
   createClient,
