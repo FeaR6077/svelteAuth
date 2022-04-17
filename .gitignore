@@ -1,0 +1,4 @@
+/node_modules/
+/public/build/
+auth_config.ts
+.DS_Store
